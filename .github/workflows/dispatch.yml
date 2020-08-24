@@ -1,6 +1,6 @@
 name: Dispatch to site
 
-on: [page_build, workflow_dispatch]
+on: [push, workflow_dispatch]
 
 jobs:
   dispatch:
