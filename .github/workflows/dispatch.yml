@@ -1,0 +1,18 @@
+name: Dispatch to site
+
+on: [page_build, workflow_dispatch]
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        repo: ["Tommoa/site", "Tommoa/blog"]
+    steps:
+      - name: Push to site
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          repository: ${{ matrix.repo }}
+          event-type: update
+          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}", "module": "themes/theme", "branch": "master"}'
