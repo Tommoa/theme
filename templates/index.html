@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% import "macros.html" as macros %}
+
+
+{% block content %}
+<header class="header">
+  {% block header %}
+  <figure class="user_logo">
+    {%- set image = "img/" ~ config.extra.profile -%}
+    {%- if ".svg" not in config.extra.profile -%}
+      {%- set image = resize_image(path="../static/img/" ~ config.extra.profile, height=30, width=30, op="fill") -%}
+    {%- endif -%}
+    <a href="{{config.base_url}}" style="background-image: url({{image}}"></a>
+  </figure>
+  <h2 class="site_title">{{config.title}}</h2>
+  <div>{{config.description | markdown(inline=true) | safe }}</div>
+  {{ macros::social_list(classes="header_list", bsize="small", extra=config.extra, siteurl=config.base_url, rss=config.generate_feed) }}
+  {% endblock header %}
+</header>
+
+<section class="post_list">
+    {% for page in paginator.pages %}
+      <article id="{{page.title}}" class="post_list_item">
+        <h1 class="article_title" >
+          <a href="{{page.permalink}}"  id="article_link" >{{page.title}}</a>
+        </h1>
+          {%- set tags=[] -%}
+          {%- if page.taxonomies.tags -%}
+            {%- set tags=page.taxonomies.tags -%}
+          {%- endif -%}
+          {% if page.date %}
+            {{ macros::frontmatter(classes="", date=page.date, updated=page.updated, word_count=page.word_count, read_time=page.reading_time, tags=tags) }}
+          {% else %}
+            {{ macros::frontmatter(classes="", date="", updated=page.updated, word_count=page.word_count, read_time=page.reading_time, tag=tags) }}}}
+          {% endif %}
+          {% if page.summary %}
+            <div class="article_content">{{ page.summary | safe }}</div>
+          {% else %}
+            {%- if config.extra.truncate_content -%}
+              <div class="article_content">{{ page.content | truncate | safe }}</div>
+            {%- else -%}
+              <div class="article_content">{{ page.content | safe }}</div>
+            {%- endif -%}
+          {% endif %}
+        <a class="button small" href="{{page.permalink}}">Permalink</a>
+      </article>
+    {% endfor %}
+</section>
+{% endblock content %}
+
+
+
+{% block pagination %}
+  <nav class="pagination">
+    {% if paginator.previous %}
+      <span class="prev" ><a rel="prev" href="{{paginator.previous}}" class="button medium font_faint">← prev</a></span>
+    {% endif %}
+
+    {% if paginator.next %}
+      <span class="next" ><a rel="next" href="{{paginator.next}}" class="button medium font_faint">next →</a></span>
+    {% endif %}
+  </nav>
+{% endblock pagination %}
+
+{% block rss %}
+  <link rel="alternate" type="application/atom+xml" title="Atom" href="{{get_url(path="atom.xml", trailing_slash=false)}}">
+{% endblock rss %}

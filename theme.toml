@@ -1,0 +1,10 @@
+name = "Theme"
+description = "A simple blog Theme focused on writing, inspired by Ergo"
+license = "MIT"
+homepage = "https://github.com/Tommoa/theme"
+min_version = "0.11.0"
+demo = "https://theme.tommoa.me"
+
+[author]
+name = "Tom Almeida"
+homepage = "https://theme.tommoa.me"
