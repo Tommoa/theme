@@ -10,6 +10,8 @@
         <!-- SEO -->
         {% if page.title %}
         <title> {{ page.title }} | {{ config.title }} </title>
+        {% elif section.title %}
+        <title> {{ section.title }} | {{ config.title }} </title>
         {% else %}
         <title> {{ config.title }} </title>
         {% endif %}
