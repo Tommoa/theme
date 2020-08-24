@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% import "macros.html" as macros %}
+
+{% block content %}
+<header class="header">
+  {% block header %}
+  <figure class="user_logo">
+      <a href="{{config.base_url}}" style="background-image: url({{config.base_url}}/img/{{config.extra.profile}}"></a>
+  </figure>
+  <h2 class="site_title">{{section.title}}</h2>
+  <div>{{section.description | markdown(inline=true) | safe }}</div>
+  {{ macros::social_list(classes="header_list", bsize="small", extra=config.extra, siteurl=config.base_url, rss=config.generate_feed) }}
+  {% endblock header %}
+</header>
+
+<section class="post_container">
+  <article>
+      {{ section.content | markdown | safe }}
+  </article>
+</section>
+
+{% endblock content %}
+
+{% block rss %}
+  <link rel="alternate" type="application/atom+xml" title="Atom" href="{{get_url(path="atom.xml", trailing_slash=false)}}">
+{% endblock rss %}
