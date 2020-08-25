@@ -10,7 +10,7 @@
     {%- if ".svg" not in config.extra.profile -%}
       {%- set image = resize_image(path="../static/img/" ~ config.extra.profile, height=125, width=125, op="fill") -%}
     {%- endif -%}
-    <a href="{{config.base_url}}" style="background-image: url({{image}}"></a>
+    <a href="{{config.base_url}}" style="background-image: url({{image}})"></a>
   </figure>
   <h2 class="site_title">{{config.title}}</h2>
   {%- if config.description -%}
