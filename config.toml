@@ -24,5 +24,6 @@ build_search_index = false
 # theme options, (Submit an issue if any social network you may want is missing here: https://github.com/InsidiousMind/Ergo/issues)
 profile = "profile.svg" # the name of the profile picture in static/img/. It is automatically resized to fit containers
 website = "tommoa.me"
+website_name = "tommoa.me"
 github = "Tommoa"
 truncate_content = true

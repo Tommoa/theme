@@ -15,7 +15,7 @@
 {% macro social_list(classes, bsize, extra, rss, siteurl) %}
 <ul class="social_list {{classes}}" >
     {% if extra.website %}
-    <li class="button {{bsize}} font_faint"><a href="https://{{extra.website}}" target="_blank">website <img class="symbol" src="/symbols/firefox-browser-brands.svg"></img></a></li>
+    <li class="button {{bsize}} font_faint"><a href="https://{{extra.website}}" target="_blank">{{extra.website_name}} <img class="symbol" src="/symbols/firefox-browser-brands.svg"></img></a></li>
     {% endif %}
     {% if extra.github %}
     <li class="button {{bsize}} font_faint"><a href="https://github.com/{{extra.github}}" target="_blank" >{{extra.github}} <img class="symbol" src="/symbols/github-brands.svg"></img></a></li>
@@ -107,7 +107,7 @@
             {% endfor %}
             <div class="menu_div"></div>
             {% if extra.website %}
-            <li><a href="https://{{extra.website}}" target="_blank">website <img class="symbol" src="/symbols/firefox-browser-brands.svg"></img></a></li>
+            <li><a href="https://{{extra.website}}" target="_blank">{{extra.website_name}} <img class="symbol" src="/symbols/firefox-browser-brands.svg"></img></a></li>
             {% endif %}
             {% if extra.github %}
             <li><a href="https://github.com/{{extra.github}}" target="_blank" >{{extra.github}} <img class="symbol" src="/symbols/github-brands.svg"></img></a></li>
