@@ -39,7 +39,7 @@
     <li class="button {{bsize}} font_faint"><a href="https://keybase.io/{{extra.keybase}}" target="_blank" >{{extra.keybase}}</a><i class="fab fa-keybase" ></i></li>
     {% endif %}
     {% if extra.email %}
-    <li class="button {{bsize}} font_faint"><a href="mailto:{{extra.email}}?subject=hi" target="_blank">say hello</a><i class="fas fa-envelope" ></i></li>
+    <li class="button {{bsize}} font_faint"><a href="mailto:{{extra.email}}?subject=hi" target="_blank">say hello <img class="symbol" src="/symbols/envelope-regular.svg"></img></a></li>
     {% endif %}
     {% if rss %}
     <li class="button {{bsize}} font_faint"><a href="{{siteurl}}/atom.xml" target ="_blank">atom <img class="symbol" src="/symbols/rss-solid.svg"></img></a></li>
@@ -131,7 +131,7 @@
             <li><a href="https://keybase.io/{{extra.keybase}}" target="_blank">{{extra.keybase}}</a><i class="fab fa-keybase" ></i></li>
             {% endif %}
             {% if extra.email %}
-            <li><a href="mailto:{{extra.email}}?subject=hi" target="_blank">say hello</a><i class="fas fa-envelope" ></i></li>
+            <li><a href="mailto:{{extra.email}}?subject=hi" target="_blank">say hello <img class="symbol" src="/symbols/envelope-regular.svg"></img></a></li>
             {% endif %}
             {% if rss %}
             <li><a href="{{siteurl}}/atom.xml" target ="_blank">atom <img class="symbol" src="/symbols/rss-solid.svg"></img></a></li>
