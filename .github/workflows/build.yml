@@ -16,12 +16,12 @@ jobs:
       id: cache
       with:
         path: zola
-        key: zola-11.0
+        key: zola-0.12.0
     - name: Install Zola
       if: steps.cache.outputs.cache-hit != 'true'
       run: |
           mkdir zola
-          wget -q -O - "https://github.com/getzola/zola/releases/download/v0.11.0/zola-v0.11.0-x86_64-unknown-linux-gnu.tar.gz" | tar xzf - -C zola
+          wget -q -O - "https://github.com/getzola/zola/releases/download/v0.12.0/zola-v0.12.0-x86_64-unknown-linux-gnu.tar.gz" | tar xzf - -C zola
     - name: Run Zola
       run: ./zola/zola build
     - name: Deploy to GitHub Pages
