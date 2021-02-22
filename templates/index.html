@@ -6,9 +6,9 @@
 <header class="header">
   {% block header %}
   <figure class="user_logo">
-    {%- set image = "img/" ~ config.extra.profile -%}
+    {%- set image = "/img/" ~ config.extra.profile -%}
     {%- if ".svg" not in config.extra.profile -%}
-      {%- set image = resize_image(path="../static/img/" ~ config.extra.profile, height=125, width=125, op="fill") -%}
+      {%- set image = resize_image(path="../static/img/" ~ config.extra.profile, height=125, width=125, op="fill") | replace(from=config.base_url, to="") -%}
     {%- endif -%}
     <a href="{{config.base_url}}" style="background-image: url({{image}})"></a>
   </figure>

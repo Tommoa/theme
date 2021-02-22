@@ -1,8 +1,8 @@
 {% macro mini_logo(classes, title, siteurl, logourl) %}
 <figure class="mini_logo {{ classes }}">
-    {%- set image = "img/" ~ logourl -%}
+    {%- set image = "/img/" ~ logourl -%}
     {%- if ".svg" not in logourl -%}
-    {%- set image = resize_image(path="../static/img/" ~ logourl, height=30, width=30, op="fill") -%}
+    {%- set image = resize_image(path="../static/img/" ~ logourl, height=30, width=30, op="fill") | replace(from=config.base_url, to="") -%}
     {%- endif -%}
     <a href="{{siteurl}}" style="background-image: url({{image}})"></a>
 </figure>
