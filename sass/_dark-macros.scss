@@ -1,0 +1,29 @@
+@import 'colors';
+@import 'dark-colors';
+
+figure.mini_logo {
+    border: 2px solid $dark-accent;
+    > a {
+        background-color: $dark-accent;
+        border: 2px solid $dark-background;
+    }
+}
+
+figure.mini_logo + h5 {
+    > a {
+        color: $dark-accent;
+    }
+}
+
+ul.social_list {
+    > li {
+        > a {
+            color: $text;
+        }
+    }
+    > li:hover {
+        > a {
+            color: $background;
+        }
+    }
+}

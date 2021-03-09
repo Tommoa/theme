@@ -1,0 +1,102 @@
+@import 'dark-colors';
+
+html, body {
+    background-color: $dark-background;
+}
+
+h2,h3,h4,h5,h6 {
+    color: $dark-title;
+}
+
+h1 {
+    color: $dark-header;
+}
+
+p,li,ul {
+    color: $dark-text;
+}
+
+blockquote {
+    border-left: 8px solid $dark-accent;
+    color: $dark-text;
+}
+
+hr {
+    color: $dark-text;
+}
+
+article {
+    a {
+        border-bottom: 2px solid $dark-outline;
+        color: $dark-text;
+    }
+    a:hover {
+        border-bottom: 2px solid $dark-accent;
+    }
+}
+
+table, th, td {
+    border: 1px solid $dark-text;
+}
+
+.user_logo {
+    border: 5px solid $dark-accent;
+    > a {
+        background-color: $dark-accent;
+        border: 5px solid $dark-background
+    }
+}
+
+.header {
+    border-bottom: 0px solid $dark-header-border;
+    color: $dark-text;
+    > h2 {
+        color: $dark-accent;
+    }
+}
+
+.article_split {
+    background-color: $dark-background;
+}
+
+.frontmatter {
+    color: $dark-title;
+}
+
+a#article_link, a#article_link:visited {
+    color: $dark-title;
+}
+
+a#article_link:hover {
+    color: $dark-accent;
+}
+
+.post_list_item {
+    > p {
+        color: $dark-text;
+    }
+}
+
+nav.pagination {
+    border-top: 1px solid $dark-header-border;
+}
+
+.button {
+    color: $dark-text;
+    border: 1px solid $dark-outline;
+}
+
+.button:hover {
+    background-color: $dark-accent;
+    color: $dark-background;
+    border: 1px solid $dark-accent;
+}
+
+.section_list {
+    a {
+        color: $dark-text;
+    }
+}
+
+@import 'dark-macros';
+@import 'dark-menu';

@@ -1,0 +1,48 @@
+@import 'dark-colors';
+@import 'vars';
+
+.menu_wrapper {
+    background: $dark-background;
+    box-shadow: -0.10em 0 1em $dark-outline, 1em 1em 1em 0 $dark-outline;
+}
+.sidebarMenuInner{
+    border-top: 1px solid rgba(0, 0, 0, 0.10);
+}
+
+.sidebarMenuInner li:not(:first-child){
+    color: $dark-text;
+    a {
+        color: $dark-text;
+    }
+}
+
+.sidebarMenuInner li:not(:first-child):hover {
+    color: $dark-title;
+    a {
+        color: $dark-title;
+    }
+}
+.sidebarMenuInner li:not(:first-child):hover {
+    color: $dark-title;
+    a {
+        color: $dark-title;
+    }
+}
+
+.sidebarMenuInner li:first-child {
+    a {
+        color: $dark-title;
+    }
+}
+
+.menu_div {
+    border-bottom: 1px solid $dark-accent;
+}
+
+path {
+  stroke: $dark-title;
+}
+
+circle {
+  fill: $dark-accent;
+}

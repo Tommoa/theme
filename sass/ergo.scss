@@ -494,3 +494,7 @@ nav.pagination {
     padding-bottom: 2em;
     margin-top: -40px;
 }
+
+@media(prefers-color-scheme: dark) {
+    @import 'dark';
+}
