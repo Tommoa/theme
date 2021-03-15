@@ -15,10 +15,13 @@
 {% macro social_list(classes, bsize, extra, rss, siteurl) %}
 <ul class="social_list {{classes}}" >
     {% if extra.website %}
-    <li class="button {{bsize}} font_faint"><a href="https://{{extra.website}}" target="_blank">{{extra.website_name}} <img class="symbol" src="/symbols/firefox-browser-brands.svg"></img></a></li>
+    <li class="button {{bsize}} font_faint"><a href="https://{{extra.website}}" target="_blank">{{extra.website_name}} <i class="fab fa-firefox-browser"></i></a></li>
     {% endif %}
     {% if extra.github %}
-    <li class="button {{bsize}} font_faint"><a href="https://github.com/{{extra.github}}" target="_blank" >{{extra.github}} <img class="symbol" src="/symbols/github-brands.svg"></img></a></li>
+    <li class="button {{bsize}} font_faint"><a href="https://github.com/{{extra.github}}" target="_blank" >{{extra.github}} <i class="fab fa-github"></i></a></li>
+    {% endif %}
+    {% if extra.sourcehut %}
+    <li class="button {{bsize}} font_faint"><a href="https://sr.ht/~{{extra.sourcehut}}" target="_blank" >~{{extra.sourcehut}} <i class="fas fa-code-branch"></i></a></li>
     {% endif %}
     {% if extra.twitter %}
     <li class="button {{bsize}} font_faint"><a href="https://twitter.com/{{extra.twitter}}" target="_blank">@{{extra.twitter}}</a><i class="fab fa-twitter" ></i></li>
@@ -30,7 +33,7 @@
     <li class="button {{bsize}} font_faint"><a href="https://youtube.com/channel/{{extra.youtube}}" target="_blank" >{{extra.youtube}}<i class="fab fa-youtube" ></i></a></li>
     {% endif %}
     {% if extra.linkedin %}
-    <li class="button {{bsize}} font_faint"><a href="https://www.linkedin.com/in/{{extra.linkedin}}" target="_blank">LinkedIn <img class="symbol" src="/symbols/linkedin-brands.svg"></img></a></li>
+    <li class="button {{bsize}} font_faint"><a href="https://www.linkedin.com/in/{{extra.linkedin}}" target="_blank">LinkedIn <i class="fab fa-linkedin" ></i></a></li>
     {% endif %}
     {% if extra.reddit %}
     <li class="button {{bsize}} font_faint"><a href="https://www.reddit.com/u/{{extra.reddit}}" target="_blank">{{extra.reddit}}</a><i class="fab fa-reddit" ></i></li>
@@ -39,10 +42,10 @@
     <li class="button {{bsize}} font_faint"><a href="https://keybase.io/{{extra.keybase}}" target="_blank" >{{extra.keybase}}</a><i class="fab fa-keybase" ></i></li>
     {% endif %}
     {% if extra.email %}
-    <li class="button {{bsize}} font_faint"><a href="mailto:{{extra.email}}?subject=hi" target="_blank">say hello <img class="symbol" src="/symbols/envelope-regular.svg"></img></a></li>
+    <li class="button {{bsize}} font_faint"><a href="mailto:{{extra.email}}?subject=hi" target="_blank">say hello <i class="far fa-envelope"></i></a></li>
     {% endif %}
     {% if rss %}
-    <li class="button {{bsize}} font_faint"><a href="{{siteurl}}/atom.xml" target ="_blank">atom <img class="symbol" src="/symbols/rss-solid.svg"></img></a></li>
+    <li class="button {{bsize}} font_faint"><a href="{{siteurl}}/atom.xml" target ="_blank">atom <i class="fas fa-rss"></i></a></li>
     {% endif %}
 </ul>
 {% endmacro social_list %}
@@ -107,10 +110,13 @@
             {% endfor %}
             <div class="menu_div"></div>
             {% if extra.website %}
-            <li><a href="https://{{extra.website}}" target="_blank">{{extra.website_name}} <img class="symbol" src="/symbols/firefox-browser-brands.svg"></img></a></li>
+            <li><a href="https://{{extra.website}}" target="_blank">{{extra.website_name}} <i class="fab fa-firefox-browser"></i></a></li>
             {% endif %}
             {% if extra.github %}
-            <li><a href="https://github.com/{{extra.github}}" target="_blank" >{{extra.github}} <img class="symbol" src="/symbols/github-brands.svg"></img></a></li>
+            <li><a href="https://github.com/{{extra.github}}" target="_blank" >{{extra.github}} <i class="fab fa-github"></i></a></li>
+            {% endif %}
+            {% if extra.sourcehut %}
+            <li><a href="https://sr.ht/~{{extra.sourcehut}}" target="_blank" >~{{extra.sourcehut}} <i class="fas fa-code-branch"></i></a></li>
             {% endif %}
             {% if extra.twitter %}
             <li><a href="https://twitter.com/{{extra.twitter}}" target="_blank">@{{extra.twitter}}</a><i class="fab fa-twitter" ></i></li>
@@ -122,7 +128,7 @@
             <li><a href="https://youtube.com/channel/{{extra.youtube}}" target="_blank" >{{extra.youtube}}<i class="fab fa-youtube" ></i></a></li>
             {% endif %}
             {% if extra.linkedin %}
-            <li><a href="https://www.linkedin.com/in/{{extra.linkedin}}" target="_blank">LinkedIn <img class="symbol" src="/symbols/linkedin-brands.svg"></img></a></li>
+            <li><a href="https://www.linkedin.com/in/{{extra.linkedin}}" target="_blank">LinkedIn <i class="fab fa-linkedin"></i></a></li>
             {% endif %}
             {% if extra.reddit %}
             <li><a href="https://www.reddit.com/u/{{extra.reddit}}" target="_blank">{{extra.reddit}}</a><i class="fab fa-reddit" ></i></li>
@@ -131,10 +137,10 @@
             <li><a href="https://keybase.io/{{extra.keybase}}" target="_blank">{{extra.keybase}}</a><i class="fab fa-keybase" ></i></li>
             {% endif %}
             {% if extra.email %}
-            <li><a href="mailto:{{extra.email}}?subject=hi" target="_blank">say hello <img class="symbol" src="/symbols/envelope-regular.svg"></img></a></li>
+            <li><a href="mailto:{{extra.email}}?subject=hi" target="_blank">say hello <i class="far fa-envelope"></i></a></li>
             {% endif %}
             {% if rss %}
-            <li><a href="{{siteurl}}/atom.xml" target ="_blank">atom <img class="symbol" src="/symbols/rss-solid.svg"></img></a></li>
+            <li><a href="{{siteurl}}/atom.xml" target ="_blank">atom <i class="fas fa-rss"></i></a></li>
             {% endif %}
         </ul>
     </div>
