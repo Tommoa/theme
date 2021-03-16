@@ -8,13 +8,11 @@
         <meta name="description" content="{{config.description}}">
 
         <!-- SEO -->
-        {% if page.title %}
-        <title> {{ page.title }} | {{ config.title }} </title>
-        {% elif section.title %}
-        <title> {{ section.title }} | {{ config.title }} </title>
-        {% else %}
-        <title> {{ config.title }} </title>
-        {% endif %}
+        <title>
+        {%- block htmltitle -%}
+        {{ config.title }}
+        {%- endblock htmltitle -%}
+        </title>
 
         <!-- Enable responsiveness on mobile devices-->
         <meta name="viewport"  content="width=device-width, initial-scale=1.0, maximum-scale=1" >

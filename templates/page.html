@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% import "macros.html" as macros %}
 
+{% block htmltitle %}
+{{page.title}} | {{ config.title }}
+{% endblock htmltitle %}
+
 {% block content %}
 <nav id="overlord" class="overlord" >
   {{ macros::mini_logo(classes="", title=config.title, siteurl=config.base_url, logourl=config.extra.profile) }}

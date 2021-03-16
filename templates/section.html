@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% import "macros.html" as macros %}
 
+{% block htmltitle %}
+{{section.title}} | {{ config.title}}
+{% endblock htmltitle %}
+
 {% block content %}
 <header class="header">
   {% block header %}
