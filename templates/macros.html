@@ -73,7 +73,7 @@
         {% endif %}
         {% for tag in tags %}
             {% set url = get_taxonomy_url(kind="tags", name=tag) %}
-            <li><a href="{{url}}">{{tag}}</a></li>
+            <li><a class="button extra_small" href="{{url}}">{{tag}}</a></li>
             {% if not loop.last %}
                 <span class="dotDivider" ></span>
             {% endif %}
