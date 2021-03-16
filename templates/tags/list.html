@@ -1,17 +1,24 @@
 {% extends "base.html" %}
 
+{% import "macros.html" as macros %}
+
 {% block htmltitle %}
-    Tags - {{ config.title }}
+    {{taxonomy.name}} | {{ config.title }}
 {% endblock htmltitle %}
 
 {% block title %}
-    Tags
+    {{taxonomy.name | upper | safe }}
 {% endblock title %}
 
 {% block content %}
-<ul>
+<section class="post_container post_list">
+    <center><h3 style="margin-bottom: 20px">{{taxonomy.name | upper}}</h3></center>
     {% for tag in terms %}
-        <li><a href="{{ tag.permalink }}">{{ tag.name }}</a></li>
+        <div class="article_link" style="margin-bottom: 10px">
+            <center>
+			<a class="button small" href="{{tag.permalink}}">{{ tag.name }}</a>
+            </center>
+        </div>
     {% endfor %}
-</ul>
+</section>
 {% endblock content %}

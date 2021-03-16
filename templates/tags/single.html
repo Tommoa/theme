@@ -3,7 +3,7 @@
 {% import "macros.html" as macros %}
 
 {% block htmltitle %}
-    {{ term.name }} - {{ config.title }}
+    {{ term.name }} | {{ config.title }}
 {% endblock htmltitle %}
 
 {% block title %}
@@ -11,27 +11,26 @@
 {% endblock title %}
 
 {% block content %}
-<header class="header">
-  <figure class="user_logo">
-      <a href="{{config.base_url}}" style="background-image: url({{config.base_url}}/img/{{config.extra.profile}}"></a>
-  </figure>
-  <h2 class="site_title">{{config.title}}</h2>
-  {{ macros::social_list(classes="header_list", bsize="small", extra=config.extra, siteurl=config.base_url, rss=config.generate_feed) }}
-</header>
+<section class="post_container post_list">
+<center><h1 class="site_title">{{term.name | markdown(inline=true) | upper | safe }}</h1></center>
 
-<center><h3>{{term.name | markdown(inline=true) | upper | safe }}</h3></center>
-
-<ul>
-    {% for page in term.pages %}
-        <li>
-            {{ page.title }}
-            {% if page.date %}
-				{{ macros::frontmatter(classes="", date=page.date, updated=page.updated, word_count=page.word_count, read_time=page.reading_time, tags=page.taxonomies.tags) }}
-			{% else %}
-				{{ macros::frontmatter(classes="", date="", updated=page.updated, word_count=page.word_count, read_time=page.reading_time, tags=page.taxonomies.tags) }}
-            {% endif %}
-			<a class="button small" href="{{page.permalink}}">Continue Reading →</a>
-        </li>
-    {% endfor %}
-</ul>
+{% for page in term.pages %}
+    <div class="post_list_item">
+        <h2 class="article_title" >
+          <a href="{{page.permalink}}"  id="article_link" >{{page.title}}</a>
+        </h2>
+        {% if page.date %}
+            {{ macros::frontmatter(classes="", date=page.date, updated=page.updated, word_count=page.word_count, read_time=page.reading_time, tags=page.taxonomies.tags) }}
+        {% else %}
+            {{ macros::frontmatter(classes="", date="", updated=page.updated, word_count=page.word_count, read_time=page.reading_time, tags=page.taxonomies.tags) }}
+        {% endif %}
+        {% if page.summary %}
+            <div class="article_content">{{ page.summary | safe }}</div>
+        {% else %}
+            <div class="article_content">{{ page.content | truncate | safe }}</div>
+        {% endif %}
+        <a class="button small" href="{{page.permalink}}">Continue Reading →</a>
+    </div>
+{% endfor %}
+</section>
 {% endblock content %}
