@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        repo: ["Tommoa/site", "Tommoa/blog"]
+        repo: ["Tommoa/tommoa.github.io"]
     steps:
       - name: Push to site
         uses: peter-evans/repository-dispatch@v1
