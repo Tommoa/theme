@@ -1,0 +1,22 @@
+name: Mirror branch to sourcehut
+on:
+  push:
+    branches:
+      - master
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          submodules: recursive
+      - name: Push to sourcehut
+        run: |
+          mkdir -p ~/.ssh
+          echo "StrictHostKeyChecking=no" >> ~/.ssh/config
+          echo "${{ secrets.SRHT_DEPLOY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          git remote add srht "git@git.sr.ht:~tommoa/theme"
+          git pull --rebase srht master
+          git push -f srht
