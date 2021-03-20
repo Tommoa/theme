@@ -7,4 +7,9 @@ demo = "https://theme.tommoa.me"
 
 [author]
 name = "Tom Almeida"
-homepage = "https://theme.tommoa.me"
+homepage = "https://tommoa.me"
+
+[original]
+author = "insipx"
+homepage = "https://ergo.liquidthink.net"
+repo = "https://github.com/insipx/ergo"
