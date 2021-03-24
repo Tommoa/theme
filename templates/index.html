@@ -20,6 +20,18 @@
   {% endblock header %}
 </header>
 
+<div class="section_div">
+    {%- if section.subsections | length > 0 -%}
+        <h2 style="margin-bottom: 30px;">Sections</h2>
+        <div class="social_list section_list">
+        {% for section_name in section.subsections %}
+            {%- set section = get_section(path=section_name) -%}
+            <div class="button large font_faint"><a href="{{section.permalink}}"> {{ section.title }}  {%- if section.extra.symbol %} <i class="{{section.extra.symbol}}"></i> {%- elif section.extra.image %} <img href="{{section.permalink}}" src="{{section.extra.image}}" class="symbol"></img> {%- endif -%}</a></div>
+        {% endfor %}
+        </div>
+    {%- endif -%}
+</div>
+
 <section class="post_list">
     {% for page in paginator.pages %}
       <article id="{{page.title}}" class="post_list_item">
