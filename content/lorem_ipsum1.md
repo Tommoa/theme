@@ -2,6 +2,8 @@
 title="Test Post2"
 date=2018-08-30
 category="test"
+[taxonomies]
+tags=['one', 'two']
 +++
 
 # A Really Clever Title
