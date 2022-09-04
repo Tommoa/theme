@@ -2,9 +2,10 @@
 <figure class="mini_logo {{ classes }}">
     {%- set image = "/img/" ~ logourl -%}
     {%- if ".svg" not in logourl -%}
-    {%- set image = resize_image(path="../static/img/" ~ logourl, height=30, width=30, op="fill") | replace(from=config.base_url, to="") -%}
+    {%- set image_obj = resize_image(path="../static/img/" ~ logourl, height=30, width=30, op="fill") -%}
+    {%- set image = image_obj.url | replace(from=config.base_url, to="") -%}
     {%- endif -%}
-    <a href="{{siteurl}}" style="background-image: url({{image}})"></a>
+    <a href="{{siteurl}}" style="background-image: url({{ image }})"></a>
 </figure>
 <h5>
     <a href="{{siteurl}}">{{title}}</a>
