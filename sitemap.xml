@@ -34,6 +34,21 @@
         <loc>https://theme.tommoa.me/page/2/</loc>
     </url>
     <url>
+        <loc>https://theme.tommoa.me/tags/</loc>
+    </url>
+    <url>
+        <loc>https://theme.tommoa.me/tags/one/</loc>
+    </url>
+    <url>
+        <loc>https://theme.tommoa.me/tags/one/page/1/</loc>
+    </url>
+    <url>
+        <loc>https://theme.tommoa.me/tags/two/</loc>
+    </url>
+    <url>
+        <loc>https://theme.tommoa.me/tags/two/page/1/</loc>
+    </url>
+    <url>
         <loc>https://theme.tommoa.me/welcome/</loc>
         <lastmod>2018-08-31</lastmod>
     </url>
