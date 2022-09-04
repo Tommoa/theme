@@ -10,7 +10,7 @@ jobs:
         repo: ["Tommoa/tommoa.github.io"]
     steps:
       - name: Push to site
-        uses: peter-evans/repository-dispatch@v1
+        uses: peter-evans/repository-dispatch@v2
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           repository: ${{ matrix.repo }}
